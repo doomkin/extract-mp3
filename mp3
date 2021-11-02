@@ -1,8 +1,4 @@
-# extract-mp3
-Скрипт извлечения звука в mp3 из видео в текущей директории
-
-```bash
-XT=$1
+EXT=$1
 QUALITY=$2
 MONO=$3
 
@@ -21,4 +17,3 @@ fi
 rename " " "_" *."$EXT"
 find *."$EXT" -exec ffmpeg -threads 0 -i {} $MONO -codec:a libmp3lame -qscale:a $QUALITY {}.mp3 \;
 rename ."$EXT".mp3 .mp3 *.mp3
-```
